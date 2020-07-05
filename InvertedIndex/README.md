@@ -10,26 +10,28 @@ Ex: word: (file#1, line#1, line#2, ….) (file#4, line#1, line#2,…) …)
 ### Proposed solution ###
 
 In order to skip the words, the stopwords.txt is added to cache and a boolean is set to true in order to know that we have words to skip;
-####InvertedIndexMapper:####
+#### InvertedIndexMapper: ####
 1. Checks if there are words that had to be skipped and set the file to cache;
 2. When creating the map it splits the file when finding a new line ("\n") in order to obtain the row number;
 So if we find a new line we increase the rowcounter;
 3. The current line is split in order to obtain the words and if the stopWords file does not contain the current word then the key: (word:file) and the value: line number is set;
 Format: word: file, line
 
-####InvertedIndexCombinare:####
-Using reduce method we obtain the mapping in the folowing format: (word, (file, line, line...))
+#### InvertedIndexCombiner: ####
+The mapping will have the folowing format: (word, (file, line, line...))
 
-####InvertedIndexReducer:####
-We obtain the final result which is has the following format: word: (file#1, line#1, line#2, ….) (file#4, line#1, line#2,…)
-
+#### InvertedIndexReducer: ####
+We obtain the final result which has the following format: word: (file#1, line#1, line#2, ….) (file#4, line#1, line#2,…)
 
 ### How to run the project ###
 After the virtual machines are configured, the command has the following format: hadoop jar InvertedIndex.jar /input /output -skip /stopwords.txt
 Input: folder with text files, I used books taken from project gutenberg;
 Output: folder where the result will be inserted. 
 *Note the folder should not exist when running the project (to delete the folder and its contents run: hdfs dfs -rm -r /output )
+
 Stopwords.txt: file with words that will not be indexed by the application. Ex: and, or, how, so, etc
+I had a VM for the master node: 4Gb and a VM for node: 2Gb
+
 
 
 
