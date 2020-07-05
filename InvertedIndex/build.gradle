@@ -1,0 +1,19 @@
+group 'romania.cluj.ubb.master.hpc'
+version '1'
+apply plugin: 'java'
+sourceCompatibility = 1.8
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'org.apache.hadoop:hadoop-common:3.2.1'
+    compile 'org.apache.hadoop:hadoop-mapreduce-client-core:2.6.1'
+    compile group: 'commons-logging', name: 'commons-logging', version: '1.1.1'
+}
+jar {
+    manifest {
+        attributes 'Main-Class': 'InvertedIndex'
+    }
+    version = "1"
+}

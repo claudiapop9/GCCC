@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.hadoop:hadoop-annotations:3.2.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.hadoop/hadoop-annotations/3.2.1/5f59ff7997aeb362e364629e4f0be48e79d5f09b/hadoop-annotations-3.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.hadoop/hadoop-annotations/3.2.1/14d291976498a8b90231941232a9dbe0891a5d4a/hadoop-annotations-3.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
